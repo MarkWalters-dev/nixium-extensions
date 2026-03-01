@@ -5,8 +5,8 @@
     "version": "1.0.0",
     "description": "Counts words, characters and lines in the active file.",
     "author": "MarkWalters-dev",
-    "download_url": "https://github.com/MarkWalters-dev/nixium-extensions/archive/refs/heads/main.zip",
-    "readme_url": "https://raw.githubusercontent.com/MarkWalters-dev/nixium-extensions/main/word-count/README.md",
+    "download_url": "https://github.com/MarkWalters-dev/nixium-extensions/archive/refs/heads/master.zip",
+    "readme_url": "https://raw.githubusercontent.com/MarkWalters-dev/nixium-extensions/master/word-count/README.md",
     "tags": ["utility", "text"]
   },
   {
@@ -15,8 +15,8 @@
     "version": "1.0.0",
     "description": "Open files on GitHub, copy file URLs, and browse blame — powered by your repo's git remote.",
     "author": "MarkWalters-dev",
-    "download_url": "https://github.com/MarkWalters-dev/nixium-extensions/archive/refs/heads/main.zip",
-    "readme_url": "https://raw.githubusercontent.com/MarkWalters-dev/nixium-extensions/main/github/README.md",
+    "download_url": "https://github.com/MarkWalters-dev/nixium-extensions/archive/refs/heads/master.zip",
+    "readme_url": "https://raw.githubusercontent.com/MarkWalters-dev/nixium-extensions/master/github/README.md",
     "tags": ["git", "github", "vcs"]
   }
 ]
