@@ -1,0 +1,6 @@
+{
+  "displayName": "GitHub",
+  "version": "1.0.0",
+  "description": "Open files on GitHub, copy file URLs, and browse blame — powered by your repo's git remote.",
+  "main": "index.js"
+}

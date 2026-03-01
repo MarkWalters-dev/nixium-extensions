@@ -1,0 +1,6 @@
+{
+  "displayName": "Word Count",
+  "version": "1.0.0",
+  "description": "Counts words, characters and lines in the active file.",
+  "main": "index.js"
+}
