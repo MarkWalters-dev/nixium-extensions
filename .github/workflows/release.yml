@@ -1,0 +1,41 @@
+name: Release extension zips
+
+on:
+  push:
+    branches: [master]
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build per-extension zips
+        run: |
+          for dir in */; do
+            name="${dir%/}"
+            # Only process directories that contain a manifest.json
+            [[ -f "$name/manifest.json" ]] || continue
+            # Zip from inside the directory so files are at root (no subdirectory prefix)
+            (cd "$name" && zip -r "../${name}.zip" .)
+            echo "Built ${name}.zip"
+          done
+
+      - name: Delete existing 'latest' release (if any)
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release delete latest --yes 2>/dev/null || true
+          git push origin :refs/tags/latest 2>/dev/null || true
+
+      - name: Create 'latest' release and upload zips
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release create latest *.zip \
+            --title "Latest extensions" \
+            --notes "Auto-generated on push." \
+            --latest
